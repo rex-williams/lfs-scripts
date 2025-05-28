@@ -3,7 +3,7 @@ set -x
 version="2.4.47"
 TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
-tar xvf "/sources/attr-${version}.tar.xz" -C "$TMPDIR"
+tar xvf "/sources/attr-${version}.tar.gz" -C "$TMPDIR"
 cd $TMPDIR/attr-${version} || exit 1
 sed -i -e 's|/@pkg_name@|&-@pkg_version@|' include/builddefs.in &&
 
