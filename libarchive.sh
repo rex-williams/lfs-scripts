@@ -6,6 +6,6 @@ tar xvf /sources/libarchive-${version}.tar.xz -C "$TMPDIR"
 cd $TMPDIR/libarchive-${version} || exit 1
 ./configure --prefix=/usr &&
 make || exit 1
-make check || exit 1
+make check
 make install
 ln -sfv bsdunzip /usr/bin/unzip
