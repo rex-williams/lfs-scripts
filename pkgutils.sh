@@ -4,5 +4,6 @@ TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
 tar xvf /sources/pkgutils-${version}.tar.xz -C "$TMPDIR"
 cd $TMPDIR/pkgutils-${version} || exit 1
+sed -i -e 's/ --static//' -e 's/ -static//' /tmp/pkgutils-5.40.10/Makefile
 make || exit 1
 make install
