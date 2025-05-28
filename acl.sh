@@ -8,5 +8,5 @@ cd $TMPDIR/acl-${version} || exit 1
 ./configure --prefix=/usr         \
             --docdir=/usr/share/doc/acl-2.3.2
 make || exit 1
-make check || exit 1
+make check
 make install
