@@ -5,13 +5,9 @@ TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
 tar xvf "/sources/attr-${version}.tar.gz" -C "$TMPDIR"
 cd $TMPDIR/attr-${version} || exit 1
-sed -i -e 's|/@pkg_name@|&-@pkg_version@|' include/builddefs.in &&
-
-INSTALL_USER=root  \
-INSTALL_GROUP=root \
-./configure --prefix=/usr &&
+./configure --prefix=/usr     \
+            --sysconfdir=/etc \
+            --docdir=/usr/share/doc/attr-2.5.2
 make || exit 1
-make install install-dev install-lib &&
-chmod -v 755 /usr/lib/libattr.so &&
-mv -v /usr/lib/libattr.so.* /lib &&
-ln -sfv ../../lib/libattr.so.1 /usr/lib/libattr.so
+make check || exit 1
+make install
