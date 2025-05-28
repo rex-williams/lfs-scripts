@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x
-version="2.4.47"
+version="2.5.2"
 TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
 tar xvf "/sources/attr-${version}.tar.gz" -C "$TMPDIR"
