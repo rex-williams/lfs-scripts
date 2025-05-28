@@ -3,7 +3,7 @@ set -x
 version="76.1"
 TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
-tar xvf "/sources/icu4c-$(echo "$version" | sed 's/\./_/g')-src.tgz" -C "$TMPDIR"
+tar xvf "/sources/icu4c-$(echo "${version}" | sed 's/\./_/g')-src.tgz" -C "$TMPDIR"
 cd $TMPDIR/icu || exit 1
 case $(uname -m) in
   i?86) sed -e "s/U_PLATFORM_IS_LINUX_BASED/__X86_64__ \&\& &/" \
