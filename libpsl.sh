@@ -5,8 +5,8 @@ TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
 tar xvf "/sources/libpsl-$version.tar.gz" -C "$TMPDIR"
 cd $TMPDIR/libpsl-$version
-mkdir build &&
-cd    build &&
+mkdir build
+cd    build
 
 meson setup --prefix=/usr --buildtype=release &&
 
