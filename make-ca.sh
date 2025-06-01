@@ -1,6 +1,6 @@
 #!/bin/sh
 set -x
-version="1.15"
+version="1.16"
 TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
 tar xvf "/sources/make-ca-${version}.tar.xz" -C "$TMPDIR"
