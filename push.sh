@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 {
     git add .
     git commit -m "$(clock)"

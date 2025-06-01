@@ -1,9 +1,10 @@
-#!/bin/sh
+#!/bin/sh -e
+set -x
 version="10.45"
 TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
-tar xvf /sources/pcre2-${version}.tar.bz2 -C "$TMPDIR"
-cd $TMPDIR/pcre2-${version} || exit 1
+tar xvf /sources/pcre2-$version.tar.bz2 -C "$TMPDIR"
+cd $TMPDIR/pcre2-$version
 ./configure --prefix=/usr                       \
             --docdir=/usr/share/doc/pcre2-10.45 \
             --enable-unicode                    \
@@ -13,5 +14,5 @@ cd $TMPDIR/pcre2-${version} || exit 1
             --enable-pcre2grep-libz             \
             --enable-pcre2grep-libbz2           \
             --enable-pcre2test-libreadline      &&
-make || exit 1
+make
 make install

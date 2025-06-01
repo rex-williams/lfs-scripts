@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/sh -e
 set -x
 version="1.12.1"
 TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
-tar xvf "/sources/ninja-${version}.tar.gz" -C "$TMPDIR"
-cd $TMPDIR/ninja-${version} || exit 1
+tar xvf "/sources/ninja-$version.tar.gz" -C "$TMPDIR"
+cd $TMPDIR/ninja-$version
 export NINJAJOBS=$(nproc)
 sed -i '/int Guess/a \
 int

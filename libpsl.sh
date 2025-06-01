@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/sh -e
 set -x
 version="0.21.5"
 TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
-tar xvf "/sources/libpsl-${version}.tar.gz" -C "$TMPDIR"
-cd $TMPDIR/libpsl-${version} || exit 1
+tar xvf "/sources/libpsl-$version.tar.gz" -C "$TMPDIR"
+cd $TMPDIR/libpsl-$version
 mkdir build &&
 cd    build &&
 
