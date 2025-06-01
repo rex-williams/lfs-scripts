@@ -9,4 +9,5 @@ cd $TMPDIR/wget-$version
             --sysconfdir=/etc  \
             --with-ssl=openssl
 make
+make check
 make install
