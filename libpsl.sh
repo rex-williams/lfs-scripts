@@ -3,7 +3,7 @@ set -x
 version="0.21.5"
 TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
-tar xvf "/sources/libpsl-${version}.tar.xz" -C "$TMPDIR"
+tar xvf "/sources/libpsl-${version}.tar.gz" -C "$TMPDIR"
 cd $TMPDIR/libpsl-${version} || exit 1
 mkdir build &&
 cd    build &&
