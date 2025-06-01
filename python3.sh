@@ -6,7 +6,6 @@ TMPDIR="/tmp/build"
 tar xvf "/sources/Python-${version}.tar.xz" -C "$TMPDIR"
 cd $TMPDIR/Python-${version} || exit 1
 ./configure --prefix=/usr \
-            --enable-shared \
-            --without-ensurepip
+            --enable-shared
 make
 make install
