@@ -5,7 +5,7 @@ TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
 tar xvf "/sources/curl-$version.tar.xz" -C "$TMPDIR"
 cd $TMPDIR/curl-$version
-patch -Np1 -i ../curl-8.14.0-upstream_fix-1.patch
+patch -Np1 -i ./curl-8.14.0-upstream_fix-1.patch
 ./configure --prefix=/usr    \
             --disable-static \
             --with-openssl   \
