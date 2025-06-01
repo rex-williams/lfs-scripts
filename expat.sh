@@ -1,6 +1,6 @@
 #!/bin/sh -e
 set -x
-version="2.6.4"
+version="2.7.1"
 TMPDIR="/tmp/build"
 [ -d "$TMPDIR" ] || mkdir "$TMPDIR"
 tar xvf "/sources/expat-$version.tar.xz" -C "$TMPDIR"
